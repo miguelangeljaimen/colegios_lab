@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('provider');
             $table->string('provider_id')->unique();
             $table->enum('rol',['ADMINISTRADOR','REPRESENTANTE','APODERADO'])->default('APODERADO');
+            $table->integer('colegio_id')->unsigned()->nullable();
+            $table->foreign('colegio_id')->references('id')->on('colegios');
             $table->rememberToken();
             $table->timestamps();
         });

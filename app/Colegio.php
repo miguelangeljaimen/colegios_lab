@@ -29,4 +29,8 @@ class Colegio extends Model
     public function obtenerComuna(){
     	return $this->belongsTo('App\Comuna');
     }
+    
+    public function obtenerUsuarios(){
+    	return $this->hasMany('App\Usuarios');
+    }
 }

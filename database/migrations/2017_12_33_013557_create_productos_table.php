@@ -17,7 +17,9 @@ class CreateProductosTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->text('descripcion');
-            $table->int('valor');
+            $table->integer('valor');
+            $table->integer('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
