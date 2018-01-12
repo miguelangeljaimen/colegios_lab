@@ -4,8 +4,8 @@
 <div class="container">
 
       <!-- Introduction Row -->
-      <h1 class="my-4">El último paso
-        <small>Es necesario que estés suscrito a un colegio!</small>
+      <h1 class="my-4">El último paso para completar tu registro <br>
+        <small>Recuerda que sólo podrás estar suscrito a un colegio!</small>
       </h1>
       <p></p>
 
@@ -15,7 +15,7 @@
           <h2 class="my-4">colegios disponibles</h2>
         </div>
         <div class="col-lg-4 col-sm-6 text-center mb-4">
-          <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
+          <a href="#"><img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""></a>
           <h3>John Smith
             <small>Job Title</small>
           </h3>

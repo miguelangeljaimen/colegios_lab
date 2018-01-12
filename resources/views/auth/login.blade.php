@@ -56,18 +56,18 @@
                                 </button>
                                 
                                 <hr>
-<div class="form-group">
-   <div class="col-md-7 col-md-offset-4">
-     <a href="{{ url('/auth/google') }}" class="btn btn-google"><i class="fa fa-google"></i> Google</a>
-     <a href="{{ url('/auth/github') }}" class="btn btn-github"><i class="fa fa-github"></i> Github</a>
-     <a href="{{ url('/auth/twitter') }}" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
-     <a href="{{ url('/auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
-   </div>
-</div>
+
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
                                 </a>
+                                <div class="form-group">
+  <h2>Ingresa con tu correo</h2>
+  <p>Para facilitar el uso podras ingresar con tu correo personal</p>
+   <div class="col-md-7 col-md-offset-4">
+     <a href="{{ url('/auth/google') }}" class="btn btn-google"><i class="fa fa-google"></i> Google</a>
+   </div>
+</div>
                             </div>
                         </div>
                     </form>
