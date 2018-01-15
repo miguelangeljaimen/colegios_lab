@@ -1,19 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <p>Bienvenida</p>
-                    <p>quienes somos?</p>
-                    <p>para que sirve?</p>
-                    <p>invitacion a ingresar al sitio</p>
-                </div>
+<!-- Masthead -->
+    <header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5">Bienvenidos a un nuevo proyecto escolar <br> 
+            <small>juntos formaremos una comunidad colaborativa.</small> </h1>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form>
+              <div class="form-row">
 
-            </div>
+                <div class="col-12 col-md-12">
+                 <a href="{{ url('/auth/google') }}" class="btn btn-block btn-lg btn-primary"> Ingresar con <b>Google</b></a>
+                  
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
+    </header>
 @endsection

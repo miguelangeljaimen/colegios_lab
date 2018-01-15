@@ -9,14 +9,62 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+     
+      @yield('estilos')
+     
+     <link href="{{ asset('componentes/landing/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <!-- Custom fonts for this template -->
+    
+    <link href="{{ asset('componentes/landing/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    
+    <link href="{{ asset('componentes/landing/vendor/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet" type="text/css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('componentes/landing/css/landing-page.min.css')}}" rel="stylesheet">
 
     
 </head>
 <body>
     <div id="app">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Colegios_lab</a>
+        @guest
+        <a class="btn btn-primary" href="{{ url('/auth/google') }}"><i class="fa fa-google"></i><b>+</b></a>
+        @else
+        <a class="btn btn-default" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">{{ Auth::user()->name }}</a>
+                                                     
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+        @endguest
+      </div>
+    </nav>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+        @yield('content')
+    </div>
+
+    <!-- Scripts -->
+        <script src="{{ asset('componentes/landing/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{ asset('componentes/landing/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+</body>
+</html>
+
+
+
         
 
 <!--
@@ -78,56 +126,3 @@
         </nav>
 
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
- 
-
-                        
-  </div>
-  <ul class="navbar-nav navbar-right">
-                   
-                        @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-</nav>
-
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
-
-        @yield('content')
-    </div>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-</body>
-</html>

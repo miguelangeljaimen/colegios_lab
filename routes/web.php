@@ -15,17 +15,31 @@ Route::get('/', function () {
     return view('app.index');
 });
 
-Auth::routes();
+Auth::routes(
+
+);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/colegio', function(){
 	return view('app.colegio.index');
 });
+
 Route::get('/flujo', function(){
 	return view('app.flujo.index');
 });
+
+Route::get('/perfil', function(){
+	return view('app.perfil.index');
+});
+
+
+
+
 
 Route::group(['prefix' => 'auth'], function () {
     Route::get('/{provider}', 'Auth\LoginController@redirectToProvider');
     Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 });
+
+Route::resource('publicaciones','ProductoController');
+
